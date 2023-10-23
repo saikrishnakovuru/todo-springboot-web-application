@@ -7,6 +7,8 @@ pageEncoding="UTF-8"%>
     <title>Login</title>
   </head>
   <body>
-    You are in Welcome page ${n}
+   <div> Welcome ${n}</div>
+    <hr>
+    Manage your <a href="/todos"> Todo's</a>
   </body>
 </html>

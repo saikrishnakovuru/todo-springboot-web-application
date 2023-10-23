@@ -8,9 +8,9 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <form method="post">
-      Name: <input type="text" name="name" />
-      password: <input type="password" name="password" />
-      <input type="submit"/>
+      Name: <input type="text" name="name" /> password:
+      <input type="password" name="password" />
+      <input type="submit" />
       ${errorMessage}
     </form>
   </body>

@@ -1,4 +1,4 @@
-package com.web.app.controller;
+package com.web.app.logincontroller;
 
 import org.springframework.stereotype.Service;
 
