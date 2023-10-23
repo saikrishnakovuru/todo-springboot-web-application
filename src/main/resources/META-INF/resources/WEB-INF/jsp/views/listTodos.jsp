@@ -7,12 +7,15 @@
       rel="stylesheet"
     />
     <title>List Todos Page</title>
+    <style>
+      .btn:hover {
+        border-radius: 20px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Welcome ${n}</h1>
-      <hr />
-      <h1>Your Todo's</h1>
+      <h1>${n}'s Todos</h1>
       <table class="table">
         <thead>
           <tr>
@@ -33,6 +36,7 @@
           </c:forEach>
         </tbody>
       </table>
+      <a href="add-new-todo" class="btn btn-success">Add Todo</a>
     </div>
     <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <script src="webjars/jquery/3.6.0/jquery.min.js"></script>

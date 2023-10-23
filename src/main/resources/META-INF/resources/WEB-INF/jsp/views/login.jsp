@@ -13,7 +13,6 @@ pageEncoding="UTF-8"%>
       .container {
         max-width: 400px;
         padding: 10px;
-       
       }
 
       .form-group {
@@ -25,10 +24,10 @@ pageEncoding="UTF-8"%>
       }
 
       .btn:hover {
-        border-color: #05df05; 
-        background-color: #9fc82d; 
-        color: #cf7c24;
-        border-radius: 20px;
+        /* border-color: #05df05;
+        background-color: #9fc82d;
+        color: #cf7c24; */
+        border-radius: 10px;
       }
     </style>
     <title>Login</title>

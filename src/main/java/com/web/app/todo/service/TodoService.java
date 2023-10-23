@@ -32,4 +32,8 @@ public class TodoService {
     public List<Todo> getListOfTodos() {
         return listOfTodos;
     }
+
+    public void addNewTodo(String userName, String description, LocalDate date, boolean value) {
+        listOfTodos.add(new Todo(++id, userName, description, date, value));
+    }
 }
