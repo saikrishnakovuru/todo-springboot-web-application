@@ -24,9 +24,6 @@ pageEncoding="UTF-8"%>
       }
 
       .btn:hover {
-        /* border-color: #05df05;
-        background-color: #9fc82d;
-        color: #cf7c24; */
         border-radius: 10px;
       }
     </style>

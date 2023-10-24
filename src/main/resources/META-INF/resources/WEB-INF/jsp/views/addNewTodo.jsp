@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+pageEncoding="UTF-8" %> <%@ taglib prefix="form"
+uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,22 +28,30 @@ pageEncoding="UTF-8"%>
     <div class="container">
       <h1>Add your new Todo ${n}</h1>
       <hr />
-      <form method="post">
+      <form:form method="post" modelAttribute="todo">
         <div class="form-group">
           <label for="description" class="form-label">Description</label>
-          <input
+          <form:input
             type="text"
             class="form-control"
-            id="description"
             name="description"
+            path="description"
           />
+          <form:errors path="description" cssClass="text-warning" />
         </div>
         <div>
-          <label for="date">Date:</label>
-          <input type="date" class="form-control" id="date" name="date" />
+          <label for="targetDate">Date:</label>
+          <form:input
+            type="date"
+            class="form-control"
+            name="targetDate"
+            path="targetDate"
+            value = "${todo.targetDate}"
+          />
+          <form:errors path="targetDate" cssClass="text-warning" />
         </div>
         <button type="submit" class="btn btn-success">Add</button>
-      </form>
+      </form:form>
     </div>
     <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <script src="webjars/jquery/3.6.0/jquery.min.js"></script>

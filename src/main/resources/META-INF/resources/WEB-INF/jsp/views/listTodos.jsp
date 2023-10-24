@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
   <head>
     <link
@@ -10,6 +10,10 @@
     <style>
       .btn:hover {
         border-radius: 20px;
+      }
+
+      body {
+        background-color: wheat;
       }
     </style>
   </head>
@@ -23,6 +27,7 @@
             <th>Description</th>
             <th>Target Date</th>
             <th>Is Done?</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +37,14 @@
               <td>${todo.description}</td>
               <td>${todo.targetDate}</td>
               <td>${todo.done}</td>
+              <td>
+                <a href="delete-todo?id=${todo.id}" class="btn btn-danger"
+                  >Delete</a
+                >
+                <a href="update-todo?id=${todo.id}" class="btn btn-success"
+                  >Update</a
+                >
+              </td>
             </tr>
           </c:forEach>
         </tbody>
