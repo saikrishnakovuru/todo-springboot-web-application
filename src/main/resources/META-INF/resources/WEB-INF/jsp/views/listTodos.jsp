@@ -28,7 +28,7 @@
   <body>
     
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-3 p-1">
-      <a class="navbar-brand m-1" href="https://www.goolge.com">Goolge</a>
+      <a class="navbar-brand m-1" href="https://github.com/saikrishnakovuru">GitHub</a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
