@@ -42,6 +42,7 @@ public class SpringSecurityConfiguration {
         return new BCryptPasswordEncoder();
     }
 
+    // Below method is to elemenate the 403 error on localhost:8080/h2-console
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
