@@ -1,5 +1,7 @@
 # todo-springboot-web-application
 
+As soon a we enter the url `localhost:8080` we will be redirected to default page provided by springSecurity. login with below provided usernames and passwords.
+
 users registered to login are 
 
 ```java
