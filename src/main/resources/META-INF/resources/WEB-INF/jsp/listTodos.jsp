@@ -22,6 +22,24 @@
         position: sticky;
         top: 0;
       }
+
+      .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 300px;
+      }
+
+      .footer p {
+        margin-bottom: 0;
+      }
+
+      .footer i {
+        color: #d9534f; /* Red color for heart icon */
+      }
     </style>
   </head>
   <body>
@@ -61,6 +79,37 @@
         </table>
       </div>
       <a href="add-new-todo" class="btn btn-success">Add</a>
+    </div>
+    <div>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>JavA DevelopeR</h5>
+              <ul>
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>Microservices</li>
+                <li>REST API</li>
+                <li>Docker</li>
+                <li>Spring Security</li>
+                <li>Spring Data JPA</li>
+              </ul>
+            </div>
+            <div class="col-lg-2 text-center">
+              <!-- Add your image here -->
+              <img
+                src="src/main/resources/images/java.jpeg"
+                alt="Java"
+              />
+            </div>
+            <div class="col-lg-6 text-right">
+              <p>&copy; 2023 Your ToDo App</p>
+              <p>Developed <i class="fa fa-heart text-danger"></i> by SAI</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
