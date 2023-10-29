@@ -2,6 +2,9 @@ package com.web.app.todo.pojo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -15,7 +18,10 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
+@Entity
 public class Todo {
+    @Id
+    @GeneratedValue
     private int id;
     private String userName;
     @Size(min = 1, message = "Description should not be left empty")

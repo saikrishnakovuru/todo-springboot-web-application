@@ -10,7 +10,7 @@
     <title>Welcome page</title>
     <style>
       body {
-        background-color: rgb(197, 185, 83);
+        background-color: #88da88;
       }
     </style>
   </head>
@@ -21,7 +21,7 @@
 
       <h4><a href="/list-todos">Manage</a> your todos</h4>
     </div>
-
+    <%@ include file="resources/footer.jspf" %>
     <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <script src="webjars/jquery/3.6.0/jquery.min.js"></script>
   </body>

@@ -1,0 +1,48 @@
+<style>
+
+ .footer {
+        background-color: rgb(86, 108, 215);
+        color: #eee;
+        padding: 10px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 300px;
+      }
+
+      .footer p {
+        margin-bottom: 0;
+      }
+
+      .large-text {
+        font-size: 24px;
+        font-weight: bold;
+      } 
+</style>
+<div>
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <p class="text-left">
+                  <span class="large-text">&copy; ToDo App</span>
+                </p>
+              </div>
+              <div class="col-lg-6 text-right">
+                <p class="text-left">
+                  <strong>JAVA DEVELOPER</strong>
+                <ul>
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>Microservices</li>
+                  <li>REST API</li>
+                  <li>Docker</li>
+                  <li>Spring Security</li>
+                  <li>Spring Data JPA</li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>

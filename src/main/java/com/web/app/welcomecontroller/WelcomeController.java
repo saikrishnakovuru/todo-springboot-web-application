@@ -1,4 +1,4 @@
-package com.web.app.logincontroller;
+package com.web.app.welcomecontroller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
