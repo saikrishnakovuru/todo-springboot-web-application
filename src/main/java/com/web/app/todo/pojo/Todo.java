@@ -2,21 +2,23 @@ package com.web.app.todo.pojo;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Setter
+@Getter
+@ToString
 public class Todo {
-    @Id
     private int id;
     private String userName;
-    @Size(min = 1, message = "Should not be left empty")
+    @Size(min = 1, message = "Description should not be left empty")
     private String description;
     @NotNull(message = "Date must be entred")
     private LocalDate targetDate;

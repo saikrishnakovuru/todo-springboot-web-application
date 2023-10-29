@@ -1,55 +1,59 @@
 package com.web.app.todo.service;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import com.web.app.todo.pojo.Todo;
 
-@Service
+@Controller
 public class TodoService {
 
-  private List<Todo> listOfTodos;
+  private List<Todo> todosList;
   private int id;
 
   public TodoService() {
-    listOfTodos = new ArrayList<>();
+    todosList = new ArrayList<>();
     id = 0;
-    addSomeTodos();
+    addTodosToTheList();
   }
 
-  private void addSomeTodos() {
-    listOfTodos.addAll(Arrays.asList(
-        new Todo(++id, "sai", "Full Stack Java Development", formatLocalDateToMMyyYyyy(LocalDate.now().plusYears(1)),
-            false),
-        new Todo(++id, "Uj", "DevOps", formatLocalDateToMMyyYyyy(LocalDate.now().plusYears(1)), false),
-        new Todo(++id, "Manda", "Testing", formatLocalDateToMMyyYyyy(LocalDate.now().plusYears(1)), false),
-        new Todo(++id, "Panda", "React", formatLocalDateToMMyyYyyy(LocalDate.now().plusYears(1)), false)));
+  private void addTodosToTheList() {
+    // todosList.addAll(Arrays.asList(new Todo(++id, "sai", "Full stack",
+    // LocalDate.now().plusYears(1), false),
+    // new Todo(++id, "Uj", "DevOps", LocalDate.now().plusYears(1), false),
+    // new Todo(++id, "Pb", "Angular", LocalDate.now().plusYears(2), false),
+    // new Todo(++id, "Manda", "Testing", LocalDate.now().plusYears(1), false),
+    // new Todo(++id, "sastri", "IS-IT", LocalDate.now().plusYears(2), false)));
   }
 
-  private LocalDate formatLocalDateToMMyyYyyy(LocalDate localDate) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-    String formattedDate = localDate.format(formatter);
-    return LocalDate.parse(formattedDate, formatter);
+  public List<Todo> getAllTodos() {
+    return todosList;
   }
 
-  public List<Todo> getListOfTodos() {
-    return listOfTodos;
+  public List<Todo> findByUserName(String userName) {
+    return todosList.stream().filter(todo -> todo.getUserName().equalsIgnoreCase(userName)).toList();
   }
 
-  public void addNewTodo(String userName, String description, LocalDate date, boolean value) {
-    listOfTodos.add(new Todo(++id, userName, description, date, value));
-  }
-
-  public void deleteTodoById(int id) {
-    listOfTodos.removeIf(todo -> todo.getId() == id);
+  public void deleteTodo(int id) {
+    todosList.removeIf(todo -> todo.getId() == id);
   }
 
   public Todo getTodoById(int id) {
-    return listOfTodos.stream().filter(todo -> todo.getId() == id).findFirst().get();
+    return todosList.stream().filter(todo -> todo.getId() == id).findFirst().get();
   }
+
+  public void saveNewTodo(String userName, String description, LocalDate targetDate, boolean isDone) {
+    todosList.add(new Todo(++id, userName, description, targetDate, isDone));
+  }
+
+  public void updateTodo(int id, Todo todo) {
+    Todo currenTodo = getTodoById(id);
+    currenTodo.setDone(todo.getTargetDate().isBefore(LocalDate.now()));
+    currenTodo.setDescription(todo.getDescription());
+    currenTodo.setTargetDate(todo.getTargetDate());
+  }
+
 }
